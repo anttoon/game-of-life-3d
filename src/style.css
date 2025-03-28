@@ -1,0 +1,115 @@
+:root {
+  --pink: #ff8fe8;
+  --blue: #8fe3ff;
+  --yellow: #ffe38f;
+  --purple: #c88fff;
+  --green: #98ff8f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+  background-color: #f0f8ff;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: opacity 0.5s ease;
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid var(--pink);
+  border-right: 8px solid var(--blue);
+  border-bottom: 8px solid var(--yellow);
+  border-left: 8px solid var(--purple);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loader-text {
+  font-size: 1.5rem;
+  color: var(--pink);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Style for the GUI panel to make it more candy-like */
+.dg.ac {
+  z-index: 1000 !important;
+}
+
+.dg {
+  font-size: 11px !important;
+}
+
+.dg.main {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.dg.main .close-button {
+  border-radius: 0 0 8px 8px !important;
+}
+
+.dg .cr.function .property-name {
+  width: 100% !important;
+}
+
+.dg .c {
+  width: 60% !important;
+}
+
+/* Custom styling for dat.gui to make it match our candy theme */
+.dg.main.taller-than-window .close-button {
+  border-top: 1px solid var(--pink) !important;
+}
+
+.dg.main .close-button:hover {
+  background-color: var(--pink) !important;
+}
+
+.dg.main .close-button {
+  color: #fff !important;
+}
+
+.dg.a {
+  margin-right: 10px !important;
+}
